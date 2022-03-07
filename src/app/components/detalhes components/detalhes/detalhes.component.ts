@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Movie } from 'src/app/model/movies';
+import { Genre, Movie } from 'src/app/model/movies';
 
 @Component({
   selector: 'app-detalhes',
@@ -15,4 +15,6 @@ export class DetalhesComponent implements OnInit {
   ngOnInit(): void {}
 
   src = (path: string) => `https://image.tmdb.org/t/p/w500${path}`;
+  data = (date: Date) => new Date(date).toLocaleDateString();
+  genres = (genre: Genre[]) => genre.map((g) => g.name).join(', ');
 }

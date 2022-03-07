@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { DetailsComponent } from './pages/details/details.component';
 import { HearderLogoComponent } from './components/detalhes components/hearder-logo/hearder-logo.component';
 import { DetalhesComponent } from './components/detalhes components/detalhes/detalhes.component';
+
 @NgModule({
   declarations: [
     AppComponent,

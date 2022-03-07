@@ -5,9 +5,15 @@
     </div>
 
     <div class="info">
-      <h3>{{ movie.original_title }}</h3>
-      <p>{{ classification }} Anos</p>
-      <p>{{ movie.overview }}</p>
+      <h3 class="title">{{ movie.original_title }}</h3>
+      <p class="info2">
+        {{ classification }} Anos • {{ data(movie.release_date) }} (BR) •
+        {{ genres(movie.genres) }} • {{ movie.runtime }} min
+      </p>
+      <div class="sinopse">
+        <h3>Sinopse</h3>
+        <p>{{ movie.overview }}</p>
+      </div>
     </div>
   </div>
 </section>
