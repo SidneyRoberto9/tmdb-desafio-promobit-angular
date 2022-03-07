@@ -20,7 +20,7 @@ export class TmdbService {
   }
 
   getMovies(id: string): Observable<Movie> {
-    const BASE_MOVIE_DETAILS = `https://api.themoviedb.org/3/movie/${id}?api_key=${environment.API_KEY}`;
+    const BASE_MOVIE_DETAILS = `https://api.themoviedb.org/3/movie/${id}?api_key=${environment.API_KEY}&language=pt-BR`;
 
     return this.http.get<Movie>(BASE_MOVIE_DETAILS);
   }
