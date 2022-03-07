@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Root } from '../model/tmdb';
+import { Result, Root } from '../model/tmdb';
 import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root',
@@ -10,9 +10,12 @@ export class TmdbService {
 
   constructor(private http: HttpClient) {}
 
-  getPopulares() {
+  getPopulares(): Result[] {
+    let populares: Result[] = [];
     this.http.get<Root>(this.Base).subscribe((data) => {
-      data.results.map((movie) => console.log(movie));
+      data.results.map((movie) => populares.push(movie));
     });
+
+    return populares;
   }
 }
