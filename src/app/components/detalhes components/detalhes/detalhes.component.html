@@ -1,1 +1,13 @@
-<p>detalhes works!</p>
+<section *ngIf="movie" class="content">
+  <div class="display">
+    <div class="poster">
+      <img [src]="src(movie.poster_path)" alt="text" />
+    </div>
+
+    <div class="info">
+      <h3>{{ movie.original_title }}</h3>
+      <p></p>
+      <p>{{ movie.overview }}</p>
+    </div>
+  </div>
+</section>

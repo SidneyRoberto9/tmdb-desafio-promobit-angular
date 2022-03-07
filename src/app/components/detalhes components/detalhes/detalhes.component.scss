@@ -1,0 +1,35 @@
+.content {
+  width: 100%;
+  height: 37.5rem;
+  background-color: var(--purple-800);
+
+  .display {
+    max-width: 90rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    .poster {
+      margin: 3.5rem 2rem 3.5rem 5rem;
+      img {
+        width: 24rem;
+        height: 35.875rem;
+        border-radius: 0.5rem;
+      }
+    }
+
+    .info {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+
+      h3 {
+        margin-bottom: 1rem;
+        position: relative;
+        font-size: 2rem;
+      }
+    }
+  }
+}
