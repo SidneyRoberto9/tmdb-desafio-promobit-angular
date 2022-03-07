@@ -11,7 +11,9 @@ export class HomeComponent implements OnInit {
   populares$: Result[] = [];
 
   constructor(private tmdb: TmdbService) {
-    this.populares$ = this.tmdb.getPopulares();
+    this.tmdb.getPopulares().subscribe((data) => {
+      this.populares$ = data.results;
+    });
   }
 
   ngOnInit(): void {}
