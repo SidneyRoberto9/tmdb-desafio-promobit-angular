@@ -4,12 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { HeaderComponent } from './components/header/header.component';
-import { CardComponent } from './components/card/card.component';
-import { DisplayCardComponent } from './components/display-card/display-card.component';
+import { HeaderComponent } from './components/home components/header/header.component';
+import { CardComponent } from './components/home components/card/card.component';
+import { DisplayCardComponent } from './components/home components/display-card/display-card.component';
 import { CommonModule } from '@angular/common';
 import { DetailsComponent } from './pages/details/details.component';
-import { HearderLogoComponent } from './components/hearder-logo/hearder-logo.component';
+import { HearderLogoComponent } from './components/detalhes components/hearder-logo/hearder-logo.component';
 @NgModule({
   declarations: [
     AppComponent,

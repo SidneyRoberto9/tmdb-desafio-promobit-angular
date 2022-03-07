@@ -1,5 +1,9 @@
 <div class="card" *ngIf="popular">
-  <img [src]="src(popular.poster_path)" alt="text" />
+  <img
+    [src]="src(popular.poster_path)"
+    alt="text"
+    (click)="getDetalhes(popular.id)"
+  />
   <p class="title">{{ popular.title }}</p>
   <p class="time">{{ data(popular.release_date) }}</p>
 </div>

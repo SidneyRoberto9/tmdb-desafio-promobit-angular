@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Data } from '@angular/router';
+import { ActivatedRoute, Data, Router } from '@angular/router';
 import { Result } from 'src/app/model/tmdb';
 
 @Component({
@@ -10,11 +10,15 @@ import { Result } from 'src/app/model/tmdb';
 export class CardComponent implements OnInit {
   @Input() popular?: Result;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   src = (path: string) => `https://image.tmdb.org/t/p/w500${path}`;
+
+  getDetalhes(id: number) {
+    this.router.navigate([`detalhes/${id}`]);
+  }
 
   data = (data: Data) => {
     let convertDate = data.toString().replace(/-/g, ' ');
@@ -51,7 +55,6 @@ export class CardComponent implements OnInit {
     } else if (mes == '01') {
       return 'JAN';
     }
-
     return 'Error';
   }
 }
