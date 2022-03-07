@@ -14,9 +14,15 @@
   --gray-800: #29292e;
   --gray-850: #1f2729;
   --gray-900: #121214;
-
+  --purple-600: #5c16c5;
+  --purple-800: #2d0c5e;
   --cyan-500: #61dafb;
   --yellow-500: #eba417;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  width: max-content;
 }
 
 @media (max-width: 1080px) {
@@ -41,7 +47,7 @@ input,
 textarea,
 select,
 button {
-  font: 400 1rem "Roboto", sans-serif;
+  font: 700 1rem "Roboto", sans-serif;
 }
 
 button {
