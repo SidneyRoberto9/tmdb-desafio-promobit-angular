@@ -1,8 +1,5 @@
-<div class="card">
-  <img
-    src="https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg"
-    alt="text"
-  />
-  <p class="title">Oi, Alberto</p>
-  <p class="time">12 NOV 2021</p>
+<div class="card" *ngIf="popular">
+  <img [src]="src(popular.poster_path)" alt="text" />
+  <p class="title">{{ popular.title }}</p>
+  <p class="time">{{ data(popular.release_date) }}</p>
 </div>
