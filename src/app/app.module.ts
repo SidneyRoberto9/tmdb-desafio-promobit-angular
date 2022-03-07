@@ -8,6 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { CardComponent } from './components/card/card.component';
 import { DisplayCardComponent } from './components/display-card/display-card.component';
 import { CommonModule } from '@angular/common';
+import { DetailsComponent } from './pages/details/details.component';
+import { HearderLogoComponent } from './components/hearder-logo/hearder-logo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +17,8 @@ import { CommonModule } from '@angular/common';
     HeaderComponent,
     CardComponent,
     DisplayCardComponent,
+    DetailsComponent,
+    HearderLogoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, CommonModule],
   providers: [],
