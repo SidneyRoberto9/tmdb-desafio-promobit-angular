@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "config": "ts-node .src/assets/setEnv.ts",
+    "config": "ts-node src/assets/setEnv.ts",
     "start": "npm rum config -- --environment=dev && ng serve",
     "build": "npm rum config -- --environment=prod&& ng build --prod",
     "watch": "ng build --watch --configuration development",
@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "rxjs": "~7.4.0",
+    "ts-node": "^10.7.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
@@ -28,7 +29,7 @@
     "@angular/cli": "~13.1.2",
     "@angular/compiler-cli": "~13.1.0",
     "@types/jasmine": "~3.10.0",
-    "@types/node": "^12.11.1",
+    "@types/node": "^17.0.21",
     "dotenv": "^16.0.0",
     "jasmine-core": "~3.10.0",
     "karma": "~6.3.0",
