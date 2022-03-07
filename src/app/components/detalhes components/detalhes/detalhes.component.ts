@@ -8,6 +8,8 @@ import { Movie } from 'src/app/model/movies';
 })
 export class DetalhesComponent implements OnInit {
   @Input() movie?: Movie;
+  @Input() classification?: string;
+
   constructor() {}
 
   ngOnInit(): void {}
