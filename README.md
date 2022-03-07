@@ -16,7 +16,7 @@ Siga o [layout do figma](https://www.figma.com/file/rM7WPqhLY9ObnGzSCeWLxB/Teste
 
 ## Requisitos funcionais
 
-- [ ] O usuário deve ter acesso a uma listagem dos filmes mais populares do dia
+- [*] O usuário deve ter acesso a uma listagem dos filmes mais populares do dia
 
 - [ ] O usuário deve conseguir paginar a lista para encontrar novos filmes
 
