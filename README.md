@@ -20,15 +20,15 @@ Siga o [layout do figma](https://www.figma.com/file/rM7WPqhLY9ObnGzSCeWLxB/Teste
 
 - [ ] O usuário deve conseguir paginar a lista para encontrar novos filmes
 
-- [ ] O usuário deve ter acesso a uma outra página com detalhes sobre o filme, ao clicar em um item na listagem
+- [*] O usuário deve ter acesso a uma outra página com detalhes sobre o filme, ao clicar em um item na listagem
 
-- [ ] A página com detalhes de um filme deve possuir uma rota própria e estar preparada para ser indexada em mecanismos de pesquisa
+- [*] A página com detalhes de um filme deve possuir uma rota própria e estar preparada para ser indexada em mecanismos de pesquisa
 
 ## Requisitos não funcionais
 
 - [ ] Na raiz do projeto, será necessário incluir um arquivo `README.md` com as instruções para construir seu projeto localmente. Opcionalmente você pode detalhar as razões pelas escolhas de ferramentas e técnicas aplicadas ao desafio.
 
-- [ ] O app deverá se comportar da mesma forma na última versão estável dos seguintes browsers: Chrome, Firefox, Edge
+- [*] O app deverá se comportar da mesma forma na última versão estável dos seguintes browsers: Chrome, Firefox, Edge
 
 - [ ] O app deverá ser responsivo
 
@@ -46,22 +46,23 @@ Temos insights que nos levam a acreditar que os usuários dessa lista costumam t
 - Domínio das ferramentas e linguagens que compõe um app de frontend moderno
 - Documentação: explicação para construir o app localmente, histórico e workflow de git
 
-## Entrega
+## Construção do Projeto
 
-Para realizar a entrega do desafio, você deverá enviar um email para devs@promobit.com.br com o título `[Frontend Challenge] Seu nome` com o link para o repositório com seu código. Exemplo:
+```bash
+# Execute o comando git clone para realizar o clone do repositório
+$ git clone https://github.com/SidneyRoberto9/tmdb-desafio-promobit-angular.git
 
-https://github.com/seu-nome/front-end-challenge.git
+# Entre na pasta do repositório clonado
+$ cd tmdb-desafio-promobit-angular
 
-Não se esqueça de criar um arquivo `README.md` contendo as instruções para construir o app localmente.
+# Execute yarn para instalar as dependências
+$ yarn
 
-## Feedback
+# Na raiz do projeto crie um arquivo .env e crie uma variavel chamada
+#API_KEY e coloco sua chave do TMDB
 
-No Promobit, valorizamos muito feedbacks. Acreditamos que o feedback é essencial para melhorar, aprender e facilitar processos. Dessa forma, assim que o seu desafio for submetido, prometemos enviar um feedback técnico em até uma semana usando todos os critérios de avaliação descritos acima.
+# Para iniciar a aplicação
+$ yarn start
+```
 
-## Dúvidas
-
-Caso haja qualquer dúvida sobre o teste, nos envie um email para devs@promobit.com.br com o título: `[Frontend Challenge] Briefing da dúvida`
-
----
-
-Obrigado e bom desafio!
+Feito com :heart: by <a href="https://github.com/SidneyRoberto9" target="_blank">Sidney Roberto</a>
