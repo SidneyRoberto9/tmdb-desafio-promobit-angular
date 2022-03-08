@@ -5,6 +5,7 @@ import { environment } from '../../environments/environment';
 import { Movie } from '../model/movies';
 import { Observable } from 'rxjs';
 import { ReleaseDate } from '../model/realiseDate';
+import { Cast } from '../model/casting';
 @Injectable({
   providedIn: 'root',
 })
@@ -29,5 +30,11 @@ export class TmdbService {
     const BASE_RELEASE_DATE = `https://api.themoviedb.org/3/movie/${id}/release_dates?api_key=${environment.API_KEY}`;
 
     return this.http.get<ReleaseDate>(BASE_RELEASE_DATE);
+  }
+
+  getParticipantes(id: string) {
+    const BASE_PARTICIPANTES = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${environment.API_KEY}`;
+
+    return this.http.get<Cast>(BASE_PARTICIPANTES);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Genre, Movie } from 'src/app/model/movies';
+import { TmdbService } from 'src/app/services/tmdb.service';
 
 @Component({
   selector: 'app-detalhes',
@@ -8,9 +9,19 @@ import { Genre, Movie } from 'src/app/model/movies';
 })
 export class DetalhesComponent implements OnInit {
   @Input() movie?: Movie;
-  @Input() classification?: string;
+  @Input() id: string = '';
 
-  constructor() {}
+  classification: string = '';
+
+  constructor(private tmdb: TmdbService) {
+    this.tmdb.getReleaseDate(this.id).subscribe((data) => {
+      data.results.map((item) => {
+        item.iso_3166_1 === 'BR'
+          ? (this.classification = item.release_dates[0].certification)
+          : null;
+      });
+    });
+  }
 
   ngOnInit(): void {}
 
