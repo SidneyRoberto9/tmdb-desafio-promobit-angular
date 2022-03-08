@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CastElement } from 'src/app/model/casting';
 import { Genre, Movie } from 'src/app/model/movies';
 import { TmdbService } from 'src/app/services/tmdb.service';
 
@@ -9,11 +10,15 @@ import { TmdbService } from 'src/app/services/tmdb.service';
 })
 export class DetalhesComponent implements OnInit {
   @Input() movie?: Movie;
-  @Input() id: string = '';
+  @Input() participantes?: CastElement[];
 
+  id: string = '';
   classification: string = '';
 
+  ngOnInit(): void {}
+
   constructor(private tmdb: TmdbService) {
+    //Classificação
     this.tmdb.getReleaseDate(this.id).subscribe((data) => {
       data.results.map((item) => {
         item.iso_3166_1 === 'BR'
@@ -22,8 +27,6 @@ export class DetalhesComponent implements OnInit {
       });
     });
   }
-
-  ngOnInit(): void {}
 
   src = (path: string) => `https://image.tmdb.org/t/p/w500${path}`;
   data = (date: Date) => new Date(date).toLocaleDateString();

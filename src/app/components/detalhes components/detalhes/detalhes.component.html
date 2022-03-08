@@ -10,9 +10,35 @@
         {{ classification }} Anos • {{ data(movie.release_date) }} (BR) •
         {{ genres(movie.genres) }} • {{ movie.runtime }} min
       </p>
+      <div class="avaliacao">
+        <circle-progress
+          [percent]="movie.vote_average * 10"
+          [radius]="30"
+          [outerStrokeWidth]="2"
+          [innerStrokeWidth]="2"
+          [outerStrokeColor]="'#78C000'"
+          [innerStrokeColor]="'#C7E596'"
+          [unitsColor]="'#C7E596'"
+          [animation]="true"
+          [animationDuration]="600"
+          [titleColor]="'#78C000'"
+          [showSubtitle]="false"
+        ></circle-progress>
+        <span>Avaliação dos usuários</span>
+      </div>
+
       <div class="sinopse">
         <h3>Sinopse</h3>
         <p>{{ movie.overview }}</p>
+      </div>
+
+      <div class="participantes">
+        <div *ngFor="let participante of participantes; let i = index">
+          <div *ngIf="i < 5">
+            <h4>{{ participante.name }}</h4>
+            <span>{{ participante.known_for_department }}</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>

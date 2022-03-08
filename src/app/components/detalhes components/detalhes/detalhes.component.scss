@@ -51,6 +51,43 @@
           color: var(--gray-300);
         }
       }
+
+      .participantes {
+        display: flex;
+        flex-wrap: wrap;
+        display: flex;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+
+        div {
+          width: 10rem;
+          margin-right: 2rem;
+          padding: 0.25rem 1rem 0.25rem 0;
+          display: flex;
+          flex-direction: column;
+
+          span {
+            font-weight: 300;
+          }
+
+          h3 {
+            font-size: 1.2rem;
+          }
+
+          h3 + span {
+            font-weight: 300;
+          }
+        }
+      }
+      .avaliacao {
+        display: flex;
+        flex-wrap: wrap;
+        span {
+          width: 10%;
+          margin-top: 0.5rem;
+          margin-left: 1rem;
+        }
+      }
     }
   }
 }

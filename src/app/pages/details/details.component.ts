@@ -14,10 +14,16 @@ export class DetailsComponent implements OnInit {
   classification: string = '';
   movie: Movie = {} as Movie;
 
-  constructor(private route: ActivatedRoute, private tmdb: TmdbService) {
+  participantes: CastElement[] = [];
+
+  constructor(private route: ActivatedRoute, private tmdb: TmdbService) {}
+
+  ngOnInit(): void {
     this.route.params.subscribe((params) => (this.id = params['id']));
     this.tmdb.getMovies(this.id).subscribe((data) => (this.movie = data));
-  }
 
-  ngOnInit(): void {}
+    this.tmdb.getParticipantes(this.id).subscribe((data) => {
+      data.cast.map((item) => this.participantes.push(item));
+    });
+  }
 }
