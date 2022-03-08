@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 import { DetailsComponent } from './pages/details/details.component';
 import { HearderLogoComponent } from './components/detalhes components/hearder-logo/hearder-logo.component';
 import { DetalhesComponent } from './components/detalhes components/detalhes/detalhes.component';
-
+import { NgCircleProgressModule } from 'ng-circle-progress';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,20 @@ import { DetalhesComponent } from './components/detalhes components/detalhes/det
     HearderLogoComponent,
     DetalhesComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CommonModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    CommonModule,
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: '#78C000',
+      innerStrokeColor: '#C7E596',
+      animationDuration: 300,
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
