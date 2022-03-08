@@ -22,4 +22,6 @@ export class DetalhesComponent implements OnInit {
   src = (path: string) => `https://image.tmdb.org/t/p/w500${path}`;
   data = (date: Date) => new Date(date).toLocaleDateString();
   genres = (genre: Genre[]) => genre.map((g) => g.name).join(', ');
+  cast = (part: CastElement[] | undefined) =>
+    part?.filter((p) => p.profile_path != null);
 }
