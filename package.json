@@ -5,7 +5,7 @@
     "ng": "ng",
     "config": "ts-node src/assets/setEnv.ts",
     "start": "npm rum config -- --environment=dev && ng serve",
-    "build": "npm rum config -- --environment=prod&& ng build --prod",
+    "build": "npm rum config -- --environment=prod && ng build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
