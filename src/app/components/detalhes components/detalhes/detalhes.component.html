@@ -69,3 +69,15 @@
     ></iframe>
   </div>
 </section>
+
+<section class="info5">
+  <h2>Recomendações</h2>
+  <div class="recomendacao">
+    <app-card
+      class="card"
+      *ngFor="let rec of recomendacoes"
+      [popular]="rec"
+      onclick="location.reload(); window.scrollTo(0, 0);"
+    ></app-card>
+  </div>
+</section>

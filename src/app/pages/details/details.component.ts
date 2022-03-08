@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CastElement } from 'src/app/model/casting';
 import { Movie } from 'src/app/model/movies';
+import { ResultRecomendacoes } from 'src/app/model/recomendacoes';
 import { TmdbService } from 'src/app/services/tmdb.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class DetailsComponent implements OnInit {
   classification: string = '';
   movie: Movie = {} as Movie;
 
+  recomendacoes: ResultRecomendacoes[] = [];
   participantes: CastElement[] = [];
   produtores: CastElement[] = [];
   viewCast: CastElement[] = [];
@@ -49,6 +51,12 @@ export class DetailsComponent implements OnInit {
 
     this.tmdb.getTrailer(this.id).subscribe((data) => {
       this.trailer = data.results[0].key;
+    });
+
+    this.tmdb.getRecomendacoes(this.id).subscribe((data) => {
+      data.results.map((item) => {
+        this.recomendacoes.push(item);
+      });
     });
   }
 }

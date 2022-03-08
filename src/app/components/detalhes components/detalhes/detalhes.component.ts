@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CastElement } from 'src/app/model/casting';
 import { Genre, Movie } from 'src/app/model/movies';
+import { ResultRecomendacoes } from 'src/app/model/recomendacoes';
+import { Result } from 'src/app/model/tmdb';
 
 @Component({
   selector: 'app-detalhes',
@@ -15,6 +17,7 @@ export class DetalhesComponent implements OnInit {
   @Input() viewCrew?: CastElement[];
   @Input() classification?: string;
   @Input() trailer?: string;
+  @Input() recomendacoes?: Result[];
 
   id: string = '';
   ngOnInit(): void {}
