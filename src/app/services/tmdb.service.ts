@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Result, Root } from '../model/tmdb';
+import { Root } from '../model/tmdb';
 import { environment } from '../../environments/environment';
 import { Movie } from '../model/movies';
 import { Observable } from 'rxjs';
 import { ReleaseDate } from '../model/realiseDate';
 import { Cast } from '../model/casting';
 import { Trailer } from '../model/trailer';
+import { Recomendacoes } from '../model/recomendacoes';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -40,8 +42,14 @@ export class TmdbService {
   }
 
   getTrailer(id: string) {
-    const BASE_PARTICIPANTES = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${environment.API_KEY}`;
-    console.log(BASE_PARTICIPANTES);
-    return this.http.get<Trailer>(BASE_PARTICIPANTES);
+    const BASE_TRAILER = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${environment.API_KEY}`;
+
+    return this.http.get<Trailer>(BASE_TRAILER);
+  }
+
+  getRecomendacoes(id: string) {
+    const BASE_RECOMENDACOES = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${environment.API_KEY}`;
+
+    return this.http.get<Recomendacoes>(BASE_RECOMENDACOES);
   }
 }
