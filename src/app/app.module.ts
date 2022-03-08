@@ -12,6 +12,7 @@ import { DetailsComponent } from './pages/details/details.component';
 import { HearderLogoComponent } from './components/detalhes components/hearder-logo/hearder-logo.component';
 import { DetalhesComponent } from './components/detalhes components/detalhes/detalhes.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { CardElencoComponent } from './components/detalhes components/card-elenco/card-elenco.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     DetailsComponent,
     HearderLogoComponent,
     DetalhesComponent,
+    CardElencoComponent,
   ],
   imports: [
     BrowserModule,
