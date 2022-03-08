@@ -49,7 +49,10 @@
 </section>
 
 <section class="info3">
+  <h2>Elenco Original</h2>
   <div class="elenco">
-    <h2>Elenco Original</h2>
+    <div *ngFor="let participante of cast(participantes)">
+      <app-card-elenco [participante]="participante"></app-card-elenco>
+    </div>
   </div>
 </section>

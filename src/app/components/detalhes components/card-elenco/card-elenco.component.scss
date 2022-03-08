@@ -1,0 +1,22 @@
+.cardParticipante {
+  width: 12rem;
+  height: 21rem;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  background-color: var(--alice);
+  img {
+    height: 13.875rem;
+    width: 10.9375rem;
+    border-radius: 0.25rem;
+  }
+  h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.875rem;
+  }
+  span {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+}

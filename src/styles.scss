@@ -7,8 +7,9 @@
 
 :root {
   --white: #ffffff;
+  --white-100: #e5e5e5;
   --black: #000000;
-
+  --alice: #f0f8ff;
   --gray-100: #e1e1e6;
   --gray-300: #a8a8b3;
   --gray-500: #646464;
@@ -39,7 +40,7 @@ body {
 }
 
 body {
-  background: var(--white);
+  background: var(--white-100);
   color: var(--white);
 }
 

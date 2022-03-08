@@ -7,7 +7,7 @@ import { CastElement } from 'src/app/model/casting';
   styleUrls: ['./card-elenco.component.scss'],
 })
 export class CardElencoComponent implements OnInit {
-  @Input() participantes?: CastElement[];
+  @Input() participante?: CastElement;
 
   constructor() {}
 
