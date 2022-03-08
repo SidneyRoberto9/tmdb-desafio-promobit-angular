@@ -33,13 +33,23 @@
       </div>
 
       <div class="participantes">
-        <div *ngFor="let participante of participantes; let i = index">
-          <div *ngIf="i < 5">
-            <h4>{{ participante.name }}</h4>
-            <span>{{ participante.known_for_department }}</span>
-          </div>
+        <div *ngFor="let participante of viewCast">
+          <h4>{{ participante.name }}</h4>
+          <span>{{ participante.known_for_department }}</span>
+        </div>
+      </div>
+      <div class="produtores">
+        <div *ngFor="let producao of viewCrew">
+          <h4>{{ producao.name }}</h4>
+          <span>{{ producao.known_for_department }}</span>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="info3">
+  <div class="elenco">
+    <h2>Elenco Original</h2>
   </div>
 </section>

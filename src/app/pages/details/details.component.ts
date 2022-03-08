@@ -15,6 +15,9 @@ export class DetailsComponent implements OnInit {
   movie: Movie = {} as Movie;
 
   participantes: CastElement[] = [];
+  produtores: CastElement[] = [];
+  viewCast: CastElement[] = [];
+  viewCrew: CastElement[] = [];
 
   constructor(private route: ActivatedRoute, private tmdb: TmdbService) {}
 
@@ -22,8 +25,24 @@ export class DetailsComponent implements OnInit {
     this.route.params.subscribe((params) => (this.id = params['id']));
     this.tmdb.getMovies(this.id).subscribe((data) => (this.movie = data));
 
+    this.tmdb.getReleaseDate(this.id).subscribe((data) => {
+      data.results.map((item) => {
+        item.iso_3166_1 === 'BR'
+          ? (this.classification = item.release_dates[0].certification)
+          : null;
+      });
+    });
+
     this.tmdb.getParticipantes(this.id).subscribe((data) => {
-      data.cast.map((item) => this.participantes.push(item));
+      data.cast.map((item, i) => {
+        this.participantes.push(item);
+        if (i < 3) this.viewCast.push(item);
+      });
+
+      data.crew.map((item, i) => {
+        this.produtores.push(item);
+        if (i < 3) this.viewCrew.push(item);
+      });
     });
   }
 }
