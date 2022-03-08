@@ -31,10 +31,8 @@ export class DetalhesComponent implements OnInit {
 
   genres = (genre: Genre[]) => genre?.map((g) => g.name).join(', ');
 
-  url = (path: string) => `https://www.youtube.com/embed/${path}`;
-
   safeUrl = (path: string) =>
-    this._sanitizer.bypassSecurityTrustResourceUrl(this.url(path));
+    this._sanitizer.bypassSecurityTrustResourceUrl(path);
 
   cast = (part: CastElement[] | undefined) =>
     part?.filter((p) => p.profile_path != null);

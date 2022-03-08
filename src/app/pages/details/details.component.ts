@@ -50,7 +50,7 @@ export class DetailsComponent implements OnInit {
     });
 
     this.tmdb.getTrailer(this.id).subscribe((data) => {
-      this.trailer = data.results[0].key;
+      this.trailer = `https://www.youtube.com/embed/${data.results[0].key}`;
     });
 
     this.tmdb.getRecomendacoes(this.id).subscribe((data) => {
