@@ -17,19 +17,19 @@ export class TmdbService {
 
   constructor(private http: HttpClient) {}
 
-  getPopulares(): Observable<Root> {
+  getPopulares() {
     const BASE_VIDEO = `https://api.themoviedb.org/3/movie/popular?api_key=${environment.API_KEY}&language=pt-BR`;
 
     return this.http.get<Root>(BASE_VIDEO);
   }
 
-  getMovies(id: string): Observable<Movie> {
+  getMovies(id: string) {
     const BASE_MOVIE_DETAILS = `https://api.themoviedb.org/3/movie/${id}?api_key=${environment.API_KEY}&language=pt-BR`;
 
     return this.http.get<Movie>(BASE_MOVIE_DETAILS);
   }
 
-  getReleaseDate(id: string): Observable<ReleaseDate> {
+  getReleaseDate(id: string) {
     const BASE_RELEASE_DATE = `https://api.themoviedb.org/3/movie/${id}/release_dates?api_key=${environment.API_KEY}&language=pt-BR`;
 
     return this.http.get<ReleaseDate>(BASE_RELEASE_DATE);

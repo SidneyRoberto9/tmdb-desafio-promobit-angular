@@ -5,7 +5,7 @@
     </div>
 
     <div class="info">
-      <h3 class="title">{{ movie.original_title }}</h3>
+      <h3 class="title">{{ movie.title }}</h3>
       <p class="info2">
         {{ classification }} Anos • {{ data(movie.release_date) }} (BR) •
         {{ genres(movie.genres) }} • {{ movie.runtime }} min
@@ -57,15 +57,13 @@
   </div>
 </section>
 
-<section class="info4">
+<section class="info4" *ngIf="trailer">
   <h2>Trailer</h2>
-  <div class="trailer" *ngIf="trailer">
+  <div class="trailer">
     <iframe
       [src]="safeUrl(trailer)"
       title="YouTube video player"
       frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
     ></iframe>
   </div>
 </section>
