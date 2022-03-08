@@ -18,7 +18,7 @@ export class TmdbService {
   constructor(private http: HttpClient) {}
 
   getPopulares(): Observable<Root> {
-    const BASE_VIDEO = `https://api.themoviedb.org/3/movie/popular?api_key=${environment.API_KEY}`;
+    const BASE_VIDEO = `https://api.themoviedb.org/3/movie/popular?api_key=${environment.API_KEY}&language=pt-BR`;
 
     return this.http.get<Root>(BASE_VIDEO);
   }
@@ -30,25 +30,25 @@ export class TmdbService {
   }
 
   getReleaseDate(id: string): Observable<ReleaseDate> {
-    const BASE_RELEASE_DATE = `https://api.themoviedb.org/3/movie/${id}/release_dates?api_key=${environment.API_KEY}`;
+    const BASE_RELEASE_DATE = `https://api.themoviedb.org/3/movie/${id}/release_dates?api_key=${environment.API_KEY}&language=pt-BR`;
 
     return this.http.get<ReleaseDate>(BASE_RELEASE_DATE);
   }
 
   getParticipantes(id: string) {
-    const BASE_PARTICIPANTES = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${environment.API_KEY}`;
+    const BASE_PARTICIPANTES = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${environment.API_KEY}&language=pt-BR`;
 
     return this.http.get<Cast>(BASE_PARTICIPANTES);
   }
 
   getTrailer(id: string) {
-    const BASE_TRAILER = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${environment.API_KEY}`;
+    const BASE_TRAILER = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${environment.API_KEY}&language=pt-BR`;
 
     return this.http.get<Trailer>(BASE_TRAILER);
   }
 
   getRecomendacoes(id: string) {
-    const BASE_RECOMENDACOES = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${environment.API_KEY}`;
+    const BASE_RECOMENDACOES = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${environment.API_KEY}&language=pt-BR`;
 
     return this.http.get<Recomendacoes>(BASE_RECOMENDACOES);
   }
