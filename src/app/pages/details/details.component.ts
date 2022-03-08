@@ -19,6 +19,8 @@ export class DetailsComponent implements OnInit {
   viewCast: CastElement[] = [];
   viewCrew: CastElement[] = [];
 
+  trailer: string = '';
+
   constructor(private route: ActivatedRoute, private tmdb: TmdbService) {}
 
   ngOnInit(): void {
@@ -43,6 +45,10 @@ export class DetailsComponent implements OnInit {
         this.produtores.push(item);
         if (i < 3) this.viewCrew.push(item);
       });
+    });
+
+    this.tmdb.getTrailer(this.id).subscribe((data) => {
+      this.trailer = data.results[0].key;
     });
   }
 }

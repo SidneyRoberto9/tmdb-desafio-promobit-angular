@@ -125,6 +125,12 @@
   color: var(--black);
   margin: 3rem 0 3rem 5rem;
 
+  h2 {
+    font-size: 1.75rem;
+    line-height: 2rem;
+    margin-bottom: 0rem;
+  }
+
   .elenco {
     max-width: 90%;
     margin: 0 auto;
@@ -132,12 +138,12 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: row;
-    margin: 2rem 0;
+    margin: 1rem 0;
     overflow-x: scroll;
 
     div {
-      margin-right: 0.55rem;
-      margin-bottom: 0.55rem;
+      margin-right: 0.65rem;
+      margin-bottom: 0.65rem;
     }
 
     &::-webkit-scrollbar {
@@ -153,6 +159,26 @@
     &::-webkit-scrollbar-thumb {
       background-color: var(--gray-300);
       border-radius: 6.25rem;
+    }
+  }
+}
+
+.info4 {
+  width: 100%;
+  color: var(--black);
+  margin: 3rem 0 3rem 5rem;
+
+  h2 {
+    font-size: 1.75rem;
+    line-height: 2rem;
+    margin-bottom: 0rem;
+  }
+
+  .trailer {
+    margin-top: 1rem;
+    iframe {
+      width: 60%;
+      height: 31.875rem;
     }
   }
 }

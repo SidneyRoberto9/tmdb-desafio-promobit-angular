@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { CastElement } from 'src/app/model/casting';
 import { Genre, Movie } from 'src/app/model/movies';
 
@@ -13,15 +14,24 @@ export class DetalhesComponent implements OnInit {
   @Input() viewCast?: CastElement[];
   @Input() viewCrew?: CastElement[];
   @Input() classification?: string;
+  @Input() trailer?: string;
 
   id: string = '';
   ngOnInit(): void {}
 
-  constructor() {}
+  constructor(protected _sanitizer: DomSanitizer) {}
 
   src = (path: string) => `https://image.tmdb.org/t/p/w500${path}`;
+
   data = (date: Date) => new Date(date).toLocaleDateString();
+
   genres = (genre: Genre[]) => genre.map((g) => g.name).join(', ');
+
+  url = (path: string) => `https://www.youtube.com/embed/${path}`;
+
+  safeUrl = (path: string) =>
+    this._sanitizer.bypassSecurityTrustResourceUrl(this.url(path));
+
   cast = (part: CastElement[] | undefined) =>
     part?.filter((p) => p.profile_path != null);
 }
