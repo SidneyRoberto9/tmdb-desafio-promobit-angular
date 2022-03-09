@@ -1,2 +1,12 @@
 <app-header></app-header>
 <app-display-card [Populares]="populares$"></app-display-card>
+
+<div class="pagination">
+  <a
+    *ngFor="let pageNumber of paginas"
+    (click)="changePage(pageNumber)"
+    [ngClass]="actualPage === pageNumber ? 'active' : ''"
+  >
+    {{ pageNumber }}
+  </a>
+</div>

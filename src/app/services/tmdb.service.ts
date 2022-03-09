@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Root } from '../model/tmdb';
 import { environment } from '../../environments/environment';
 import { Movie } from '../model/movies';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ReleaseDate } from '../model/realiseDate';
 import { Cast } from '../model/casting';
 import { Trailer } from '../model/trailer';
@@ -13,14 +13,20 @@ import { Recomendacoes } from '../model/recomendacoes';
   providedIn: 'root',
 })
 export class TmdbService {
+  private pageSource = new BehaviorSubject<number>(1);
+  getPage$ = this.pageSource.asObservable();
+
+  setPage(page: number) {
+    this.pageSource.next(page);
+  }
   id = '';
 
   constructor(private http: HttpClient) {}
 
   getPopulares() {
-    const BASE_VIDEO = `https://api.themoviedb.org/3/movie/popular?api_key=${environment.API_KEY}&language=pt-BR`;
+    const BASE_POPULARES = `https://api.themoviedb.org/3/movie/popular?api_key=${environment.API_KEY}&language=pt-BR&page=${this.pageSource.value}`;
 
-    return this.http.get<Root>(BASE_VIDEO);
+    return this.http.get<Root>(BASE_POPULARES);
   }
 
   getMovies(id: string) {
