@@ -7,8 +7,13 @@
     <div class="info">
       <h3 class="title">{{ movie.title }}</h3>
       <p class="info2">
-        {{ classification }} Anos • {{ data(movie.release_date) }} (BR) •
-        {{ genres(movie.genres) }} • {{ movie.runtime }} min
+        <span>{{ classification }} Anos</span>
+        <span class="pointer"> • </span>
+        <span>{{ data(movie.release_date) }} (BR)</span>
+        <span class="pointer"> • </span>
+        <span>{{ genres(movie.genres) }}</span>
+        <span class="pointer"> • </span>
+        <span>{{ movie.runtime }} min</span>
       </p>
       <div class="avaliacao">
         <circle-progress
