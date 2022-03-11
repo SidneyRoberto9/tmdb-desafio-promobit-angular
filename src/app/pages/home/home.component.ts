@@ -9,7 +9,7 @@ import { TmdbService } from 'src/app/services/tmdb.service';
 })
 export class HomeComponent implements OnInit {
   populares$: Result[] = [];
-  paginas: any[] = [];
+  paginas: number = 1;
   actualPage: number = 1;
 
   constructor(private tmdb: TmdbService) {}
@@ -26,11 +26,30 @@ export class HomeComponent implements OnInit {
 
     this.tmdb.getPopulares().subscribe((data) => {
       this.populares$ = data.results;
-      this.paginas = new Array(500);
-      for (let i = 0; i < this.paginas.length; i++) {
-        this.paginas[i] = i + 1;
-      }
+      this.paginas = data.total_pages;
     });
+  }
+
+  tabulationPage(number: number | null) {
+    let basedValue = number;
+    let initialPage = 1;
+
+    if (basedValue === null) {
+      basedValue = 1;
+      return Array(basedValue);
+    }
+
+    if (basedValue > 5) {
+      basedValue = 5;
+    }
+
+    if (this.actualPage) {
+      initialPage = Math.max(this.actualPage - 2, 1);
+    }
+
+    return Array.from(Array(basedValue).keys()).map(
+      (_, index) => index + initialPage
+    );
   }
 
   ngOnInit(): void {

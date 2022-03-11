@@ -3,7 +3,7 @@
 
 <div class="pagination">
   <a
-    *ngFor="let pageNumber of paginas"
+    *ngFor="let pageNumber of tabulationPage(paginas)"
     (click)="changePage(pageNumber)"
     [ngClass]="actualPage === pageNumber ? 'active' : ''"
   >
