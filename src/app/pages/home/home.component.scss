@@ -3,15 +3,18 @@
   justify-content: center;
   align-items: center;
   margin: 4rem;
-
-  overflow: hidden;
 }
 
 .pagination a {
-  color: black;
+  color: var(--black);
   float: left;
+  text-align: center;
   padding: 8px 16px;
   text-decoration: none;
+  width: 3.625rem;
+  height: 2.125rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .pagination a.active {
@@ -22,5 +25,10 @@
 
 .pagination a:hover:not(.active) {
   background-color: var(--white);
+  border-radius: 5px;
+}
+
+.pagination a:hover {
+  background-color: var(--black);
   border-radius: 5px;
 }
