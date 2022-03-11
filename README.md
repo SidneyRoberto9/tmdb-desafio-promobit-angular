@@ -30,7 +30,7 @@ Siga o [layout do figma](https://www.figma.com/file/rM7WPqhLY9ObnGzSCeWLxB/Teste
 
 - [x] O app deverá se comportar da mesma forma na última versão estável dos seguintes browsers: Chrome, Firefox, Edge
 
-- [ ] O app deverá ser responsivo
+- [x] O app deverá ser responsivo
 
 ## Extras
 
