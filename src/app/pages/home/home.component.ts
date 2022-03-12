@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
+import { Movie } from 'src/app/model/movies';
 import { Result } from 'src/app/model/tmdb';
 import { TmdbService } from 'src/app/services/tmdb.service';
 
@@ -8,7 +9,6 @@ import { TmdbService } from 'src/app/services/tmdb.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  populares$: Result[] = [];
   paginas: number = 1;
   actualPage: number = 1;
 
@@ -20,14 +20,10 @@ export class HomeComponent implements OnInit {
   }
 
   getPopulares() {
-    this.tmdb.getPage$.subscribe((page) => {
-      this.actualPage = page;
-    });
-
-    this.tmdb.getPopulares().subscribe((data) => {
-      this.populares$ = data.results;
-      this.paginas = data.total_pages;
-    });
+    this.tmdb.getTotalPage$.subscribe(
+      (totalPage) => (this.paginas = totalPage)
+    );
+    this.tmdb.getPage$.subscribe((page) => (this.actualPage = page));
   }
 
   tabulationPage(number: number | null) {
