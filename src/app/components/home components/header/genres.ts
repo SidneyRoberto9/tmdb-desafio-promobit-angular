@@ -1,4 +1,6 @@
-export const genres = [
+import { GenreFilter } from 'src/app/model/genres';
+
+export const genres: GenreFilter[] = [
   {
     id: 28,
     name: 'Ação',
