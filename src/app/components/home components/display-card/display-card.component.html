@@ -1,7 +1,7 @@
-<section class="cards">
+<section class="cards" *ngIf="movies">
   <app-card
     class="card"
-    *ngFor="let popular of Populares"
+    *ngFor="let popular of movies | async"
     [popular]="popular"
     onclick="window.scrollTo(0, 0);"
   ></app-card>

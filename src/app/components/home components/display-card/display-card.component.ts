@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Result } from 'src/app/model/tmdb';
+import { TmdbService } from 'src/app/services/tmdb.service';
 
 @Component({
   selector: 'app-display-card',
@@ -7,8 +9,11 @@ import { Result } from 'src/app/model/tmdb';
   styleUrls: ['./display-card.component.scss'],
 })
 export class DisplayCardComponent implements OnInit {
-  @Input() Populares?: Result[];
-  constructor() {}
+  movies?: Observable<Result[]>;
 
-  ngOnInit(): void {}
+  constructor(private tmdb: TmdbService) {}
+
+  ngOnInit(): void {
+    this.movies = this.tmdb.getMovies$;
+  }
 }
