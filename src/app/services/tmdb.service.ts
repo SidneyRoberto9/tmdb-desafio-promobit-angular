@@ -8,6 +8,7 @@ import { ReleaseDate } from '../model/realiseDate';
 import { Cast } from '../model/casting';
 import { Trailer } from '../model/trailer';
 import { Recomendacoes } from '../model/recomendacoes';
+import { GenreFilter } from '../model/genres';
 
 @Injectable({
   providedIn: 'root',
@@ -19,12 +20,19 @@ export class TmdbService {
   setPage(page: number) {
     this.pageSource.next(page);
   }
+
   id = '';
 
   constructor(private http: HttpClient) {}
 
-  getPopulares() {
-    const BASE_POPULARES = `https://api.themoviedb.org/3/movie/popular?api_key=${environment.API_KEY}&language=pt-BR&page=${this.pageSource.value}`;
+  getPopulares(genres?: string[]) {
+    let BASE_POPULARES;
+
+    if (genres?.length) {
+      BASE_POPULARES = `https://api.themoviedb.org/3/discover/movie?api_key=${environment.API_KEY}&language=pt-BR&page=${this.pageSource.value}&with_genres=${genres}`;
+    } else {
+      BASE_POPULARES = `https://api.themoviedb.org/3/movie/popular?api_key=${environment.API_KEY}&language=pt-BR&page=${this.pageSource.value}`;
+    }
 
     return this.http.get<Root>(BASE_POPULARES);
   }
