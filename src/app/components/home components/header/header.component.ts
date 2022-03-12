@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GenreFilter } from 'src/app/model/genres';
+import { Result } from 'src/app/model/tmdb';
+import { TmdbService } from 'src/app/services/tmdb.service';
 import { genres as g } from './genres';
 
 @Component({
@@ -10,25 +12,33 @@ import { genres as g } from './genres';
 export class HeaderComponent implements OnInit {
   active: boolean = false;
   genres = g;
-  filterGenres: GenreFilter[] = [];
+  filterGenresId: string[] = [];
+  movies: Result[] = [];
 
-  constructor() {}
+  constructor(private tmdb: TmdbService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.tmdb.getPopulares();
+  }
 
-  filterGenre(id: number) {
+  filterGenre(id: string) {
     if (this.inFilter(id)) {
-      this.filterGenres = this.filterGenres.filter((genre) => genre.id !== id);
+      this.filterGenresId = this.filterGenresId.filter((genre) => genre !== id);
     } else {
       this.genres.find((genre) => {
         if (genre.id === id) {
-          this.filterGenres.push(genre);
+          this.filterGenresId.push(genre.id);
         }
       });
     }
+    this.filtre();
   }
 
-  inFilter(id: number) {
-    return this.filterGenres.find((genre) => genre.id === id);
+  inFilter(id: string) {
+    return this.filterGenresId.find((genre) => genre === id);
+  }
+
+  filtre() {
+    this.tmdb.getPopulares(this.filterGenresId);
   }
 }
