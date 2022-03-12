@@ -3,6 +3,6 @@ export interface RootGenreFilter {
 }
 
 export interface GenreFilter {
-  id: number;
+  id: string;
   name: string;
 }

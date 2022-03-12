@@ -2,79 +2,79 @@ import { GenreFilter } from 'src/app/model/genres';
 
 export const genres: GenreFilter[] = [
   {
-    id: 28,
+    id: '28',
     name: 'Ação',
   },
   {
-    id: 12,
+    id: '12',
     name: 'Aventura',
   },
   {
-    id: 16,
+    id: '16',
     name: 'Animação',
   },
   {
-    id: 35,
+    id: '35',
     name: 'Comédia',
   },
   {
-    id: 80,
+    id: '80',
     name: 'Crime',
   },
   {
-    id: 99,
+    id: '99',
     name: 'Documentário',
   },
   {
-    id: 18,
+    id: '18',
     name: 'Drama',
   },
   {
-    id: 10751,
+    id: '10751',
     name: 'Família',
   },
   {
-    id: 14,
+    id: '14',
     name: 'Fantasia',
   },
   {
-    id: 36,
+    id: '36',
     name: 'História',
   },
   {
-    id: 27,
+    id: '27',
     name: 'Terror',
   },
   {
-    id: 10402,
+    id: '10402',
     name: 'Música',
   },
   {
-    id: 9648,
+    id: '9648',
     name: 'Mistério',
   },
   {
-    id: 10749,
+    id: '10749',
     name: 'Romance',
   },
   {
-    id: 878,
+    id: '878',
     name: 'Ficção científica',
   },
   {
-    id: 10770,
+    id: '10770',
     name: 'Cinema TV',
   },
   {
-    id: 53,
+    id: '53',
     name: 'Thriller',
   },
   {
-    id: 10752,
+    id: '10752',
     name: 'Guerra',
   },
   {
-    id: 37,
+    id: '37',
     name: 'Faroeste',
   },
 ];
