@@ -9,6 +9,7 @@ import { Cast } from '../model/casting';
 import { Trailer } from '../model/trailer';
 import { Recomendacoes } from '../model/recomendacoes';
 import { GenreFilter } from '../model/genres';
+import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 
 @Injectable({
   providedIn: 'root',
@@ -21,11 +22,11 @@ export class TmdbService {
     this.pageSource.next(page);
   }
 
-  private filtersSource = new BehaviorSubject<string[]>([] as string[]);
-  getFilters$ = this.filtersSource.asObservable();
+  private totalPageSource = new BehaviorSubject<number>(1);
+  getTotalPage$ = this.totalPageSource.asObservable();
 
-  setFilter(filter: string[]) {
-    this.filtersSource.next(filter);
+  setTotalPage(page: number) {
+    this.totalPageSource.next(page);
   }
 
   private moviesSource = new BehaviorSubject<Result[]>([] as Result[]);
@@ -39,20 +40,19 @@ export class TmdbService {
 
   constructor(private http: HttpClient) {}
 
-  getPopulares() {
+  getPopulares(fill?: string[]) {
     let BASE_POPULARES;
 
-    let filter: string[] = [];
-
-    this.getFilters$.subscribe((fil) => fil.map((f) => filter.push(f)));
-
-    if (filter.length) {
-      BASE_POPULARES = `https://api.themoviedb.org/3/discover/movie?api_key=${environment.API_KEY}&language=pt-BR&page=${this.pageSource.value}&with_genres=${filter}`;
+    if (fill?.length) {
+      BASE_POPULARES = `https://api.themoviedb.org/3/discover/movie?api_key=${environment.API_KEY}&language=pt-BR&page=${this.pageSource.value}&with_genres=${fill}`;
     } else {
       BASE_POPULARES = `https://api.themoviedb.org/3/movie/popular?api_key=${environment.API_KEY}&language=pt-BR&page=${this.pageSource.value}`;
     }
 
-    return this.http.get<Root>(BASE_POPULARES);
+    this.http.get<Root>(BASE_POPULARES).subscribe((data) => {
+      this.setMovies(data.results);
+      this.setTotalPage(data.total_pages);
+    });
   }
 
   getMovies(id: string) {
