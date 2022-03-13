@@ -38,7 +38,6 @@ Temos insights que nos levam a acreditar que os usuários dessa lista costumam t
 
 - [x] O usuário deve conseguir filtrar os filmes listados por gênero, com a possibilidade de usar mais de um gênero
 - [x] O usuário deve conseguir remover filtros e a listagem deve ser atualizada de acordo com o filtro removido
-- [ ] O usuário deve conseguir voltar para a página de listagem de filmes com os filtros ainda ativos
 
 ## Critérios de avaliação
 
