@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Result } from 'src/app/model/tmdb';
 import { TmdbService } from 'src/app/services/tmdb.service';
+
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-display-card',

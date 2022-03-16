@@ -1,9 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CastElement } from 'src/app/model/casting';
 import { Genre, Movie } from 'src/app/model/movies';
-import { ResultRecomendacoes } from 'src/app/model/recomendacoes';
 import { Result } from 'src/app/model/tmdb';
+
+import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-detalhes',

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { GenreFilter } from 'src/app/model/genres';
 import { Result } from 'src/app/model/tmdb';
 import { TmdbService } from 'src/app/services/tmdb.service';
+
+import { Component, OnInit } from '@angular/core';
+
 import { genres as g } from './genres';
 
 @Component({

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
 import { CastElement } from 'src/app/model/casting';
+
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-card-elenco',

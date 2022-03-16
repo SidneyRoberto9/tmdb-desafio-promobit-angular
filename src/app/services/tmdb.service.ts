@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+
 import { HttpClient } from '@angular/common/http';
-import { Result, Root } from '../model/tmdb';
+import { Injectable } from '@angular/core';
+
 import { environment } from '../../environments/environment';
-import { Movie } from '../model/movies';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { ReleaseDate } from '../model/realiseDate';
 import { Cast } from '../model/casting';
-import { Trailer } from '../model/trailer';
+import { Movie } from '../model/movies';
+import { ReleaseDate } from '../model/realiseDate';
 import { Recomendacoes } from '../model/recomendacoes';
-import { GenreFilter } from '../model/genres';
-import { dashCaseToCamelCase } from '@angular/compiler/src/util';
+import { Result, Root } from '../model/tmdb';
+import { Trailer } from '../model/trailer';
 
 @Injectable({
   providedIn: 'root',

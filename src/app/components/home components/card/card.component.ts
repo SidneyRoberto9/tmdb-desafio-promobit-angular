@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Data, Router } from '@angular/router';
 import { Result } from 'src/app/model/tmdb';
+
+import { Component, Input, OnInit } from '@angular/core';
+import { Data, Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',

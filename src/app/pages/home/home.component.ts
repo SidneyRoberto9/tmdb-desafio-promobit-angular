@@ -1,7 +1,6 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
-import { Movie } from 'src/app/model/movies';
-import { Result } from 'src/app/model/tmdb';
 import { TmdbService } from 'src/app/services/tmdb.service';
+
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',

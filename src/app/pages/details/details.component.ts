@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { CastElement } from 'src/app/model/casting';
 import { Movie } from 'src/app/model/movies';
 import { ResultRecomendacoes } from 'src/app/model/recomendacoes';
 import { TmdbService } from 'src/app/services/tmdb.service';
+
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
